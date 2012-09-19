@@ -12,7 +12,7 @@ describe 'apache2::mod_php5' do
   end
 
   it "deletes the stock php config on rhel distributions" do
-    skip unless node.platform?("amazon", "redhat", "centos", "scientific")
+    skip unless node.platform?("amazon", "redhat", "centos", "oracle", "scientific")
     file("#{node['apache']['dir']}/conf.d/php.conf").wont_exist
   end
 

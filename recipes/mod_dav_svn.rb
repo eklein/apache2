@@ -19,7 +19,7 @@
 
 package "libapache2-svn" do
   case node['platform']
-  when "centos","redhat","scientific","fedora","suse","amazon"
+  when "centos","redhat","oracle","scientific","fedora","suse","amazon"
     package_name "mod_dav_svn"
   else
     package_name "libapache2-svn"

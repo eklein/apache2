@@ -40,7 +40,7 @@ The `apache2::god_monitor` recipe uses a definition from the `god` cookbook. Inc
 
 * Debian
 * Ubuntu
-* Red Hat/CentOS/Scientific Linux/Fedora (RHEL Family)
+* Red Hat/CentOS/Scientific Linux/Fedora/Oracle Enterprise Linux (RHEL Family)
 * SUSE/OpenSUSE
 * ArchLinux
 * Amazon Linux AMI

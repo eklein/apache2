@@ -4,7 +4,7 @@ describe 'apache2::mod_ssl' do
   include Helpers::Apache
 
   it 'installs the mod_ssl package on RHEL distributions' do
-    skip unless ["redhat", "centos", "scientific", "fedora", "amazon"].include? node.platform
+    skip unless ["redhat", "centos", "oracle", "scientific", "fedora", "amazon"].include? node.platform
     package("mod_ssl").must_be_installed
   end
 

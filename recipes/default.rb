@@ -24,7 +24,7 @@ end
 
 service "apache2" do
   case node['platform']
-  when "redhat","centos","scientific","fedora","suse","amazon"
+  when "redhat","centos","oracle","scientific","fedora","suse","amazon"
     service_name "httpd"
     # If restarted/reloaded too quickly httpd has a habit of failing.
     # This may happen with multiple recipes notifying apache to restart - like
@@ -45,6 +45,7 @@ service "apache2" do
     "ubuntu" => { "default" => [ :restart, :reload, :status ] },
     "redhat" => { "default" => [ :restart, :reload, :status ] },
     "centos" => { "default" => [ :restart, :reload, :status ] },
+    "oracle" => { "default" => [ :restart, :reload, :status ] },
     "scientific" => { "default" => [ :restart, :reload, :status ] },
     "fedora" => { "default" => [ :restart, :reload, :status ] },
     "arch" => { "default" => [ :restart, :reload, :status ] },
@@ -56,7 +57,7 @@ service "apache2" do
   action :enable
 end
 
-if platform?("redhat", "centos", "scientific", "fedora", "arch", "suse", "freebsd", "amazon")
+if platform?("redhat", "centos", "oracle", "scientific", "fedora", "arch", "suse", "freebsd", "amazon")
   directory node['apache']['log_dir'] do
     mode 0755
     action :create
@@ -158,7 +159,7 @@ end
 
 template "apache2.conf" do
   case node['platform']
-  when "redhat", "centos", "scientific", "fedora", "arch", "amazon"
+  when "redhat", "centos", "oracle", "scientific", "fedora", "arch", "amazon"
     path "#{node['apache']['dir']}/conf/httpd.conf"
   when "debian","ubuntu"
     path "#{node['apache']['dir']}/apache2.conf"

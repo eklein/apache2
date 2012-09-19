@@ -22,7 +22,7 @@ else
       package "libapache2-mod-auth-cas" do
         action :install
       end
-    when "centos", "redhat", "fedora", "amazon", "scientific"
+    when "centos", "redhat", "oracle", "fedora", "amazon", "scientific"
       package "mod_auth_cas" do
         action :install
         notifies :run, resources(:execute => "generate-module-list"), :immediately

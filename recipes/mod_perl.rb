@@ -26,7 +26,7 @@ case node['platform']
         action :install
       end
     end
-  when "centos", "redhat", "fedora", "amazon", "scientific"
+  when "centos", "redhat", "oracle", "fedora", "amazon", "scientific"
     package "mod_perl" do
       action :install
       notifies :run, resources(:execute => "generate-module-list"), :immediately

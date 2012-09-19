@@ -5,7 +5,7 @@ describe 'apache2::mod_dav_svn' do
 
   it 'installs mod_dav_svn' do
     mod_dav_svn = case node['platform']
-      when "centos","redhat","scientific","fedora","suse","amazon"
+      when "centos","oracle","redhat","scientific","fedora","suse","amazon"
         "mod_dav_svn"
       else
         "libapache2-svn"

@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-if platform?("redhat", "centos", "scientific", "fedora", "suse", "arch", "freebsd", "amazon")
+if platform?("redhat", "centos", "oracle", "scientific", "fedora", "suse", "arch", "freebsd", "amazon")
   apache_module "logio"
 else
   include_recipe "apache2"
